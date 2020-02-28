@@ -13,10 +13,12 @@ class Application
         resp.write item.price
       else
         resp.write "We don't have that item"
+        resp.status = 400 
       end
 
     else
       resp.write "Path Not Found"
+      resp.status = 404
     end
     resp.finish
   end
